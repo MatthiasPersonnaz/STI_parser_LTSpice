@@ -1,0 +1,17 @@
+* C:\Users\matth\MooreSTI011.asc
+V§CLK clk 0 PULSE(0V 5V 0.s 0.00001s 0.00001s 0.001s 0.002s 5)
+V§E e 0 PULSE(0V 5V 0.002s 0.00001s 0.00001s 0.005s 0.01s 1)
+XE1 N003 clk N001 NC_01 D_flipflop
+XE0 N007 clk N005 N006 D_flipflop
+V1 NC_02 0 5
+XU2 N001 N005 N002 and2
+XU3 e N004 not
+XU4 N002 N004 N003 or2
+XU1 N004 N008 N007 or2
+XU5 N001 N006 N008 and2
+XU7 N001 N006 s and2
+.inc eea.lib
+.tran 0.01s
+.lib eea_digital.lib
+.backanno
+.end
